@@ -23,16 +23,16 @@
                     <tr>
                         <th>Beer Maker</th>
                         <th>Beer Name</th>
-                        <th>Votes</th>
-                        <th>Percentage</th>
+                        <!-- <th>Votes</th> -->
+                        <!-- <th>Percentage</th> -->
                     </tr>
                 </thead>
                 <tbody class="text-center" ng-repeat="beer in vm.beerArray">
                     <tr>                 
                         <td>{{beer.Maker}}</td>
                         <td>{{beer.Name}}</td>
-                        <td>{{beer.Votes}}</td>
-                        <td>{{beer.Percentage}}</td>
+                        <!-- <td>{{beer.Votes}}</td> -->
+                        <!-- <td>{{beer.Percentage}}</td> -->
                         <td><button ng-click="vm.deleteBeer($index)">Delete</button></td>
                     </tr>
                 </tbody>
