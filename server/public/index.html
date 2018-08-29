@@ -9,7 +9,35 @@
     <script src="vendors/angular.min.js"></script>
     <script src="scripts/client.js"></script>
 </head>
-<body>
-    
+<body ng-app="BeerApp">
+    <div ng-controller="BeerController as vm">
+        <h1 class="text-center">My Favorite Beers</h1>
+            <form >
+                <input type="text" placeholder="Beer Maker" ng-model="vm.newBeer.Maker" ng-required>
+                <input type="text" placeholder="Beer Name" ng-model="vm.newBeer.Name" ng-required>
+                <button class="text-center" type="reset" ng-click="vm.addBeer(vm.newBeer)">Add New Beer</button>
+            </form>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Beer Maker</th>
+                        <th>Beer Name</th>
+                        <th>Votes</th>
+                        <th>Percentage</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center" ng-repeat="beer in vm.beerArray">
+                    <tr>                 
+                        <td>{{beer.Maker}}</td>
+                        <td>{{beer.Name}}</td>
+                        <td>{{beer.Votes}}</td>
+                        <td>{{beer.Percentage}}</td>
+                        <td><button ng-click="vm.deleteBeer($index)">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
